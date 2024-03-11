@@ -2,9 +2,9 @@ langages utilisés:php/jquery/js/scss/sql
 
 frameworks utilisés: slim/jquery/twig
 
-but général de l'application: poster des annonces façon leboncoin, faire une annonce et la poster en ligne, trouver des revendeurs.
+but général de l'application: poster des annonces façon leboncoin, faire une annonce et la poster en ligne, trouver des revendeurs.permettre aux utilisateurs de poster des petites annonces dans différentes catégories et départements, elles peuvent être consultées, modifiées et supprimées par les utilisateurs. Les utilisateurs peuvent également rechercher des annonces en fonction de différents critères (mot-clé, catégorie, département, prix minimum et maximum).
 
-estimation de ce qui faut faire: 
+estimation de ce qu'il faut faire: 
 faire un coup de composer pour remettre à jour twig et slim qui sont en version 2.0 et 1.0: 2
 refaire un fichier config:4
 erreur de namespaces dans les controller:2
