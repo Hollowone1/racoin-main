@@ -1,0 +1,21 @@
+{
+    "require": {
+        "slim/slim": "^4.13",
+        "twig/twig": "^3.8",
+        "illuminate/database": "^10",
+        "aura/autoload": "^2.0",
+        "illuminate/support": "^10"
+    },
+    "autoload":{
+        "psr-0":{
+            "controller":"",
+            "model":"",
+            "db":""
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "kylekatarnls/update-helper": true
+        }
+    }
+}
