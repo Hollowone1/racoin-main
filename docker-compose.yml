@@ -1,40 +1,29 @@
-version: '3.8'
+version: '3'
 
 services:
-  # The MariaDB service
-  db:
-    image: mariadb:10.6
-    restart: always
-    volumes:
-      - db_data:/var/lib/mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-
-  # The PHP service
-  php:
-    build:
-      context: .
-      dockerfile: docker/php/Dockerfile
-    restart: always
-    volumes:
-      - .:/var/www/symfony
-    depends_on:
-      - db
-
-  # The Nginx service
-  web:
-    image: nginx:alpine
-    restart: always
+  app:
+    image: canals/php:7.4
     ports:
       - "8000:80"
     volumes:
-      - .:/var/www/symfony
+      - .:/var/www/html
     depends_on:
-      - php
+      - db
 
-# The named volume for the MariaDB data
+  db:
+    image: mariadb:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: database
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+    ports:
+      - '3306:3306'
+
+  adminer:
+    image: adminer
+    ports:
+      - '8081:8080'
+
 volumes:
-  db_data:
+  db-data:
